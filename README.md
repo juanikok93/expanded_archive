@@ -14,3 +14,10 @@ Under this framework, the role of the curator can be interpreted in computationa
 - Scrape the text of said contemporary artists from their websites or Instagram posts.
 
 Once this information is obtained, Word2Vec is used for text vectorization, assembling a list of keywords for both the collection and artist's texts. VGG16 is used for image recognition. Then, similarity and distance calculations were performed on both values, and a ranking assembled in which the artworks at the top are assumed to be more closely related to the Museum's collection, thus 'curated' by the collection.
+
+The repository folders contain:
+
+1. Scraping: Two python files for scraping the images and metadata of highlight pieces from the MetMuseum API, as well as the resulting JSON metadata file.
+2. Text: Two notebooks, one for aggregating, finding keywords, vectorizing and visualizing .txt files obtained from applying OCR to Met Publication PDFs; and the second to obtain a list of keywords from several .txt files with samples of text of each contemporary artist.
+3. Image: Notebooks for obtaining image features from a pretrained image recognition neural network (VGG16) for the MetMuseum Highlight and for scraped contemporary artist images, as well as notebooks for t-SNE and tensorboard visualization. Images of contemporary artist's work was scraped using [this repository](https://github.com/arc298/instagram-scraper).
+4. Ranking_and_analysis: Notebooks for text embedding, comparison and ranking using [MUSE](https://www.tensorflow.org/hub/tutorials/retrieval_with_tf_hub_universal_encoder_qa), a file to compute image and text rankings into a final ranking, as well as a notebook to perform data cleaning and analysis on the MetMuseum Collection metadata file.
